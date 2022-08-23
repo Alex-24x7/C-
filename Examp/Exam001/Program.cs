@@ -50,7 +50,7 @@
 //    Console.WriteLine("В недели 7 дней!");
 //}
 
-Console.Clear();
+/*Console.Clear();
 Console.Write("Введите первое трёхзначное: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите второе трёхзначное: ");
@@ -67,3 +67,4 @@ else if (srAr % 10 == min /100){
     Console.WriteLine("Цифры равны");}
 else{
     Console.WriteLine("Нет");}
+*/
