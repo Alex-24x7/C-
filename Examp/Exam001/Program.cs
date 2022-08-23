@@ -50,4 +50,20 @@
 //    Console.WriteLine("В недели 7 дней!");
 //}
 
+Console.Clear();
+Console.Write("Введите первое трёхзначное: ");
+int num1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите второе трёхзначное: ");
+int num2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите третье трёхзначное: ");
+int num3 = Convert.ToInt32(Console.ReadLine());
 
+int srAr = (num1 + num2 + num3) / 3;
+int min1 = Math.Min(num1, num2);
+int min = Math.Min(min1, num3);
+if (srAr % 10 > min /100){
+    Console.WriteLine("Да");}
+else if (srAr % 10 == min /100){
+    Console.WriteLine("Цифры равны");}
+else{
+    Console.WriteLine("Нет");}
