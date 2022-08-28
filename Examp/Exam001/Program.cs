@@ -183,3 +183,15 @@ while (n < 0 && count >= n)
 Console.WriteLine();
 */
 
+/*
+//Напишите программу, которая на вход принимает радиус круга и находит его площадь 
+//округленную до целого числа, 
+//необходимо вывести максимальную цифру в полученном округлённом значении площади круга
+Console.Clear();
+Console.Write("Введите радиус: ");
+int r = Convert.ToInt32(Console.ReadLine());
+double S = Math.Round(Math.PI * (r * r));
+Console.WriteLine ($"Площадь круга: {S}");
+string S2 = Convert.ToString(S);
+Console.WriteLine($"Максимальная цифра: {S2.Max()}");
+*/
