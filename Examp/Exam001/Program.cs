@@ -118,7 +118,7 @@ Console.Write("Введите пятизначное число: ");
 string? number = Console.ReadLine();
 
 void CheckingNumber(string number){
-  if (number[0]==number[4] || number[1]==number[3])
+  if (number[0]==number[4] && number[1]==number[3])
     Console.WriteLine($"Число: {number} - палиндром.");
   else Console.WriteLine($"Число: {number} - НЕ палиндром.");
 }
@@ -194,4 +194,136 @@ double S = Math.Round(Math.PI * (r * r));
 Console.WriteLine ($"Площадь круга: {S}");
 string S2 = Convert.ToString(S);
 Console.WriteLine($"Максимальная цифра: {S2.Max()}");
+*/
+
+/*
+Console.Clear();
+Console.WriteLine("Введите число: ");
+int A = int.Parse(Console.ReadLine());
+
+Console.WriteLine(GetSum(A));
+
+int GetSum(int a){
+    int sum = 0;
+    for(int i = 0; i <= a; i++){
+        sum += i;
+    }
+    return sum;
+}
+*/
+
+/*
+//Задача 26: Напишите программу, которая принимает на вход число и выдаёт количество цифр в числе.
+//456 -> 3
+//78 -> 2
+//89126 -> 5
+Console.Clear();
+Console.WriteLine("Введите число: ");
+int A = int.Parse(Console.ReadLine());
+
+string a = Convert.ToString(A);
+Console.WriteLine(a.Length);
+*/
+
+/*
+//Задача 28: Напишите программу, которая принимает на вход число N и выдаёт произведение чисел от 1 до N.
+//4 -> 24 
+//5 -> 120
+
+int Fact(int N){
+    int res = 1;
+    if (N > 0){
+        for (int i = 1; i <= N; i++){
+            res *= i;
+        }
+    }
+    else{
+        for (int i = 1; i >= N; i--){
+            res *= i;
+        }
+    }
+    return res;
+}
+Console.Clear();
+int N = 0;
+while (true){
+    Console.WriteLine("Введите число");
+    if (!int.TryParse(Console.ReadLine(), out N)){
+        Console.WriteLine("Некорректный ввод");
+    }
+    else break;
+}
+Console.WriteLine(Fact(N));
+*/
+
+/*
+//Задача 30: Напишите программу, которая выводит массив из 8 элементов, 
+//заполненный нулями и единицами в случайном порядке.
+//[1,0,1,1,0,1,0,0]
+
+Console.Clear();
+Console.WriteLine("Укажите длину массива: ");
+int [] rand = new int[int.Parse(Console.ReadLine())];
+for (int i = 0; i < rand.Length; i++){
+    rand[i] = new Random().Next(0, 2);
+    Console.Write(rand[i]+" ");
+}
+Console.WriteLine();
+*/
+
+//ДЗ
+
+/*
+//Задача 25: Напишите цикл, который принимает на вход два числа (A и B) 
+//и возводит число A в натуральную степень B.
+//3, 5 -> 243 (3⁵)
+//2, 4 -> 16
+
+Console.Clear();
+Console.WriteLine("Введите число A: ");
+int A = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите число B: ");
+int B = int.Parse(Console.ReadLine());
+
+int a = 1;
+for (int i = 1; i <= B; i++){
+    a = a * A;
+}
+Console.WriteLine(a);
+*/
+
+/*
+//Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+//452 -> 11
+//82 -> 10
+//9012 -> 12
+
+Console.Clear();
+Console.WriteLine("Введите число:");
+int i = Convert.ToInt32(Console.ReadLine());
+int sum = 0;
+
+while (i > 0){
+    int num = i % 10;
+    i = i / 10;
+    sum = sum + num;
+}
+Console.WriteLine("Сумма всех цифр в числе равна: " + sum);
+*/
+
+/*
+//Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+//1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+//6, 1, 33 -> [6, 1, 33]
+
+Console.Clear();
+Console.WriteLine("Укажите длину массива: ");
+int [] rand = new int[int.Parse(Console.ReadLine())];
+Console.Write("Укажите диапазон значений в массиве: 0 - ");
+int A = int.Parse(Console.ReadLine());
+for (int i = 0; i < rand.Length; i++){
+    rand[i] = new Random().Next(0, A+1);
+    Console.Write(rand[i]+" ");
+}
+Console.WriteLine();
 */
