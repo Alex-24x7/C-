@@ -327,3 +327,17 @@ for (int i = 0; i < rand.Length; i++){
 }
 Console.WriteLine();
 */
+
+//Напишите программу, которая задаёт массив из 10 элементов, 
+//которые необходимо заполнить случайными значениями в диапазоне 
+//от -10 до 10 и найти максимальное значение среди них
+
+Console.Clear();
+Console.WriteLine("Массив:");
+int [] rand = new int[int.Parse(10)];
+for (int i = 0; i < rand.Length; i++){
+    rand[i] = new Random().Next(-11, 11);
+    Console.Write(rand[i]+" ");
+}
+Console.WriteLine();
+Console.WriteLine(rand);
