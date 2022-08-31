@@ -332,6 +332,7 @@ Console.WriteLine();
 //которые необходимо заполнить случайными значениями в диапазоне 
 //от -10 до 10 и найти максимальное значение среди них
 
+/*
 Console.Clear();
 Console.Write("Массив: ");
 int [] rand = new int[10];
@@ -343,3 +344,4 @@ Console.WriteLine();
 Console.Write("Максимальное значение массива: ");
 int maxValue = rand.Max();
 Console.WriteLine(maxValue);
+*/
