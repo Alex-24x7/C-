@@ -333,11 +333,13 @@ Console.WriteLine();
 //от -10 до 10 и найти максимальное значение среди них
 
 Console.Clear();
-Console.WriteLine("Массив:");
-int [] rand = new int[int.Parse(10)];
+Console.Write("Массив: ");
+int [] rand = new int[10];
 for (int i = 0; i < rand.Length; i++){
-    rand[i] = new Random().Next(-11, 11);
+    rand[i] = new Random().Next(-10, 11);
     Console.Write(rand[i]+" ");
 }
 Console.WriteLine();
-Console.WriteLine(rand);
+Console.Write("Максимальное значение массива: ");
+int maxValue = rand.Max();
+Console.WriteLine(maxValue);
