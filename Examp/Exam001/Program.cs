@@ -611,7 +611,7 @@ void PrintArray(int[] numbers)
 }
 */
 
-
+/*
 //Задача 38: Задайте массив вещественных чисел. 
 //Найдите разницу между максимальным и минимальным элементов массива.
 //[3 7 22 2 78] -> 76
@@ -658,3 +658,172 @@ void PrintArray(double[] numbers)
     Console.Write("]");
     Console.WriteLine();
 }
+*/
+
+
+/*
+//Задача 39: Напишите программу, которая перевернёт одномерный массив
+//(последний элемент будет на первом месте, а первый - на последнем и т.д.)
+//[1,2,3] -> [3,2,1]
+Console.Clear();
+Console.WriteLine("Введите размерность массива: ");
+int size = int.Parse(Console.ReadLine());
+
+int [] array = FillArray(size, 1, 10);
+
+int [] FillArray(int size, int min, int max){
+    int [] result = new int[size];
+    for(int i = 0; i < size;i++){
+        result[i] = new Random().Next(min, max + 1);
+    }
+    return result;
+}
+
+Console.WriteLine("Входной массив: ");
+Console.WriteLine(String.Join(" ", array));
+
+Console.WriteLine("Полученный массив (1 способ): ");
+Console.WriteLine(String.Join(" ", array.Reverse()));
+
+Console.WriteLine("Полученный массив (2 способ): ");
+Console.WriteLine(String.Join(" ", ReverseArray(array))); 
+
+int [] ReverseArray(int [] array){
+    int [] result = new int[array.Length];
+    for(int i = 0; i < array.Length;i++){
+        result[i] = array[array.Length - 1 - i];
+    }
+    return result;
+}
+*/
+
+/*
+//Задача 40: Напишите программу, которая принимает на вход три числа и проверяет, 
+//может ли существовать треугольник с сторонами такой длины.
+Console.Clear();
+int A, B, C;
+Console.Write("Введите длины сторон треугольника: ");
+while (!int.TryParse(Console.ReadLine(), out A) || A < 0) {
+Console.Write("Ошибка! Введите положительное число: ");
+}
+Console.Write("Введите длины сторон треугольника: ");
+while (!int.TryParse(Console.ReadLine(), out B) || B < 0) {
+Console.Write("Ошибка! Введите положительное число: ");
+}
+Console.Write("Введите длины сторон треугольника: ");
+while (!int.TryParse(Console.ReadLine(), out C) || C < 0) {
+Console.Write("Ошибка! Введите положительное число: ");
+}
+
+if (A < B + C & B < A + C & C < A + B) 
+    Console.Write("Может!");
+else 
+    Console.Write("Не может!");
+Console.WriteLine( );
+*/
+
+
+
+
+
+//Задача 42: Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+//45 -> 101101
+//3  -> 11
+//2  -> 10
+/*
+Console.Clear();
+Console.WriteLine("Введите число: ");
+int value = int.Parse(Console.ReadLine());
+string BinaryCode = Convert.ToString(value, 2);
+Console.WriteLine("Число в двоичной системе: ");
+Console.WriteLine(BinaryCode);
+*/
+
+
+/*
+Console.Clear();
+Console.WriteLine("Введите число: ");
+int value = int.Parse(Console.ReadLine());
+
+string i = " ";
+
+while (value > 0)
+{
+    if (value % 2 != 0){
+        i += "1";
+    }
+    else{
+        i += "0";
+    }
+    value = value / 2;
+}
+Console.WriteLine($"в двоичной системе:");
+Console.WriteLine(String.Join(" ", i.Reverse()));
+*/
+
+
+
+// Задача 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// -1, -7, 567, 89, 223-> 3
+
+Console.Clear();
+Console.WriteLine ("Введите числа через запятую:");
+string numbers = Console.ReadLine();
+// нам нужно перебрать каждый элемент строки, если это не запятая или пробел, кладм его в массив, если запятая или пробле. делаем ++
+string [] newNumbers = new string [numbers.Length];
+int k = 0;
+for (int i = 0; i < newNumbers.Length; i++)
+{
+  if (numbers[i] == ',')
+  {
+    k++;
+  }
+  else
+  {
+    newNumbers[k] = newNumbers[k]+$"{numbers[i]}";
+  }
+}
+k++;
+int [] resultNumbers = new int[k];
+PrintArray (resultNumbers, newNumbers);
+int sum = 0;
+for (int i = 0; i < k; i++)
+{
+  if (resultNumbers[i]>0)
+  {
+    sum++;
+  }
+}
+Console.WriteLine ("Количество чисел больше 0: "+sum);
+
+void PrintArray (int [] array, string [] string1)
+{
+  for (int i = 0; i < array.Length; i++)
+  {
+  array[i] = Convert.ToInt32(string1[i]);
+  Console.Write (array[i]+"  ");
+  }
+Console.WriteLine();
+}
+
+
+/*
+//Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+//заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
+//значения b1, k1, b2 и k2 задаются пользователем.
+Console.Clear();
+Console.WriteLine("введите значение b1");
+double b1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("введите число k1");
+double k1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("введите значение b2");
+double b2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("введите число k2");
+double k2 = Convert.ToInt32(Console.ReadLine());
+
+double x = (-b2 + b1)/(-k1 + k2);
+double y = k2 * x + b2;
+
+Console.WriteLine($"две прямые пересекутся в точке с координатами X: {x}, Y: {y}");
+*/
