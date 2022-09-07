@@ -828,3 +828,66 @@ double y = k2 * x + b2;
 
 Console.WriteLine($"две прямые пересекутся в точке с координатами X: {x}, Y: {y}");
 */
+
+
+
+//Дополнительная задача (задача со звёздочкой): Напишите программу, которая задаёт массив из n элементов, 
+//которые необходимо заполнить случайными значениями и сдвинуть элементы массива влево, или вправо на 1 позицию.
+//[8, 5, 1, 7, 0] - [5, 1, 7, 0, 8] - сдвиг влево
+//[8, 5, 1, 7, 0] - [0, 8, 5, 1, 7] - сдвиг вправо
+
+Console.Clear();
+Console.WriteLine("Введите размер массива:");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] numbers = new int[size];
+
+FillArrayRandomNumbers(numbers);
+Console.WriteLine("Вот наш массив: ");
+PrintArray(numbers);
+LeftArray(numbers);
+Console.WriteLine("лево: ");
+PrintArray(numbers);
+RightArray(numbers);
+Console.WriteLine("право: ");
+PrintArray(numbers);
+
+
+void LeftArray(int [] numbers)
+{
+    int last = numbers[1];
+ 
+    for (int i = numbers.Length - 2; i >= 0; i--)
+    {
+        numbers[i + 1] = numbers[i];
+    }
+ 
+    numbers[0] = last;
+}
+void RightArray(int [] numbers)
+{
+    int last = numbers[numbers.Length - 1];
+ 
+    for (int i = numbers.Length - 2; i >= 0; i--)
+    {
+        numbers[i + 1] = numbers[i];
+    }
+ 
+    numbers[0] = last;
+}
+void FillArrayRandomNumbers(int[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = new Random().Next(0,10);
+        }
+}
+void PrintArray(int[] numbers)
+{
+    Console.Write("[ ");
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            Console.Write(numbers[i] + " ");
+        }
+    Console.Write("]");
+    Console.WriteLine();
+}
