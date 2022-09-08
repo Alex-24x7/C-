@@ -830,7 +830,7 @@ Console.WriteLine($"две прямые пересекутся в точке с 
 */
 
 
-/*
+
 //Дополнительная задача (задача со звёздочкой): Напишите программу, которая задаёт массив из n элементов, 
 //которые необходимо заполнить случайными значениями и сдвинуть элементы массива влево, или вправо на 1 позицию.
 //[8, 5, 1, 7, 0] - [5, 1, 7, 0, 8] - сдвиг влево
@@ -844,36 +844,35 @@ int[] numbers = new int[size];
 FillArrayRandomNumbers(numbers);
 Console.WriteLine("Вот наш массив: ");
 PrintArray(numbers);
-LeftArray(numbers);
 Console.WriteLine("Сдвигаем влево: ");
-PrintArray(numbers);
-RightArray(numbers);
-RightArray(numbers);
+PrintArray(LeftArray(numbers));
 Console.WriteLine("Сдвигаем вправо: ");
-PrintArray(numbers);
+PrintArray(RightArray(numbers));
 
 
-void LeftArray(int [] numbers)
+int[] LeftArray(int [] numbers)
 {
+    int[] leftNumbers = new int[numbers.Length];
     int last = numbers[0];
- 
     for (int i = 1; i <= numbers.Length - 1; i++)
     {
-        numbers[i - 1] = numbers[i];
+        leftNumbers[i - 1] = numbers[i];
     }
  
-    numbers[numbers.Length - 1] = last;
+    leftNumbers[leftNumbers.Length - 1] = last;
+    return leftNumbers;
 }
-void RightArray(int [] numbers)
+int[] RightArray(int [] numbers)
 {
+    int[] rightNumbers = new int[numbers.Length];
     int last = numbers[numbers.Length - 1];
- 
     for (int i = numbers.Length - 2; i >= 0; i--)
     {
-        numbers[i + 1] = numbers[i];
+        rightNumbers[i + 1] = numbers[i];
     }
  
-    numbers[0] = last;
+    rightNumbers[0] = last;
+    return rightNumbers;
 }
 void FillArrayRandomNumbers(int[] numbers)
 {
@@ -882,14 +881,15 @@ void FillArrayRandomNumbers(int[] numbers)
             numbers[i] = new Random().Next(0,10);
         }
 }
-void PrintArray(int[] numbers)
+void PrintArray(int[] Numbers)
 {
     Console.Write("[ ");
-    for(int i = 0; i < numbers.Length; i++)
+    for(int i = 0; i < Numbers.Length; i++)
         {
-            Console.Write(numbers[i] + " ");
+            Console.Write(Numbers[i] + " ");
         }
     Console.Write("]");
     Console.WriteLine();
 }
-*/
+
+
