@@ -840,41 +840,40 @@ Console.Clear();
 Console.WriteLine("Введите размер массива:");
 int size = Convert.ToInt32(Console.ReadLine());
 int[] numbers = new int[size];
-int[] RightNumbers = numbers;
-int[] LeftNumbers = numbers;
 
 FillArrayRandomNumbers(numbers);
 Console.WriteLine("Вот наш массив: ");
 PrintArray(numbers);
-LeftArray(LeftNumbers);
-Console.WriteLine("лево: ");
-PrintArray(LeftNumbers);
-RightArray(RightNumbers);
-Console.WriteLine("право: ");
-PrintArray(RightNumbers);
+LeftArray(numbers);
+Console.WriteLine("Сдвигаем влево: ");
+PrintArray(numbers);
+RightArray(numbers);
+RightArray(numbers);
+Console.WriteLine("Сдвигаем вправо: ");
+PrintArray(numbers);
 
 
-void LeftArray(int [] LeftNumbers)
+void LeftArray(int [] numbers)
 {
-    int last = LeftNumbers[0];
+    int last = numbers[0];
  
-    for (int i = 1; i <= LeftNumbers.Length - 1; i++)
+    for (int i = 1; i <= numbers.Length - 1; i++)
     {
-        LeftNumbers[i - 1] = LeftNumbers[i];
+        numbers[i - 1] = numbers[i];
     }
  
-    LeftNumbers[LeftNumbers.Length - 1] = last;
+    numbers[numbers.Length - 1] = last;
 }
-void RightArray(int [] RightNumbers)
+void RightArray(int [] numbers)
 {
-    int last = RightNumbers[RightNumbers.Length - 1];
+    int last = numbers[numbers.Length - 1];
  
-    for (int i = RightNumbers.Length - 2; i >= 0; i--)
+    for (int i = numbers.Length - 2; i >= 0; i--)
     {
-        RightNumbers[i + 1] = RightNumbers[i];
+        numbers[i + 1] = numbers[i];
     }
  
-    RightNumbers[0] = last;
+    numbers[0] = last;
 }
 void FillArrayRandomNumbers(int[] numbers)
 {
