@@ -808,6 +808,7 @@ Console.WriteLine();
 }
 */
 
+/*
 //Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 Console.Clear();
 Console.WriteLine("введите значение b1");
@@ -823,3 +824,69 @@ double x = (-b2 + b1)/(-k1 + k2);
 double y = k2 * x + b2;
 
 Console.WriteLine($"две прямые пересекутся в точке с координатами X: {x}, Y: {y}");
+*/
+
+
+
+//Дополнительная задача (задача со звёздочкой): Напишите программу, которая задаёт массив из n элементов, 
+//которые необходимо заполнить случайными значениями и сдвинуть элементы массива влево, или вправо на 1 позицию.
+//[8, 5, 1, 7, 0] - [5, 1, 7, 0, 8] - сдвиг влево
+//[8, 5, 1, 7, 0] - [0, 8, 5, 1, 7] - сдвиг вправо
+
+Console.Clear();
+Console.WriteLine("Введите размер массива:");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] numbers = new int[size];
+
+FillArrayRandomNumbers(numbers);
+Console.WriteLine("Вот наш массив: ");
+PrintArray(numbers);
+Console.WriteLine("Сдвигаем влево: ");
+PrintArray(LeftArray(numbers));
+Console.WriteLine("Сдвигаем вправо: ");
+PrintArray(RightArray(numbers));
+
+
+int[] LeftArray(int [] numbers)
+{
+    int[] leftNumbers = new int[numbers.Length];
+    int last = numbers[0];
+    for (int i = 1; i <= numbers.Length - 1; i++)
+    {
+        leftNumbers[i - 1] = numbers[i];
+    }
+ 
+    leftNumbers[leftNumbers.Length - 1] = last;
+    return leftNumbers;
+}
+int[] RightArray(int [] numbers)
+{
+    int[] rightNumbers = new int[numbers.Length];
+    int last = numbers[numbers.Length - 1];
+    for (int i = numbers.Length - 2; i >= 0; i--)
+    {
+        rightNumbers[i + 1] = numbers[i];
+    }
+ 
+    rightNumbers[0] = last;
+    return rightNumbers;
+}
+void FillArrayRandomNumbers(int[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = new Random().Next(0,10);
+        }
+}
+void PrintArray(int[] Numbers)
+{
+    Console.Write("[ ");
+    for(int i = 0; i < Numbers.Length; i++)
+        {
+            Console.Write(Numbers[i] + " ");
+        }
+    Console.Write("]");
+    Console.WriteLine();
+}
+
+
