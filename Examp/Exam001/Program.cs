@@ -1214,50 +1214,56 @@ void PrintArray(int [,] filledArray){
 //Определите, есть столбец в массиве, сумма которого, больше суммы элементов расположенных 
 //в четырех "углах" двумерного массива.
 
-Console.Clear();
+// Console.Clear();
 
-Console.Write("Количество строк в массиве: ");
-int rows = int.Parse(Console.ReadLine());
+// Console.Write("Количество строк в массиве: ");
+// int rows = int.Parse(Console.ReadLine());
 
-Console.Write("Количество столбцов в массиве: ");
-int columns = int.Parse(Console.ReadLine());
+// Console.Write("Количество столбцов в массиве: ");
+// int columns = int.Parse(Console.ReadLine());
 
-int [,] array = FillArray(rows, columns, 1 , 10);
-int sumCorner = 0;
-PrintArray(array);
-SumCorner(array);
-SumColumn(array);
+// int [,] array = FillArray(rows, columns, 1 , 10);
+// int sumCorner = 0;
+// PrintArray(array);
+// SumCorner(array);
+// SumColumn(array);
 
 
-void SumColumn(int [,] filledArray){
-    for (int j = 0; j < array.GetLength(1); j++){
-    double avarage = 0;
-        for (int i = 0; i < array.GetLength(0); i++)
-            avarage = (avarage + array[i, j]);
-    if (avarage > sumCorner) Console.Write("Да");
-    }
-}
-int SumCorner(int [,] filledArray){
-    sumCorner = filledArray[0,0] + filledArray[rows-1, 0] + filledArray[0, columns-1] + filledArray[rows-1, columns-1];
-    Console.WriteLine($"Сумма 'угловых' элементов массива: {sumCorner}");
-    return sumCorner;
-}
+// void SumColumn(int [,] filledArray){
+//     bool x = false;
+//     for (int j = 0; j < array.GetLength(1); j++){
+//     double avarage = 0;
+//         for (int i = 0; i < array.GetLength(0); i++)
+//             avarage = (avarage + array[i, j]);
+//     if (avarage > sumCorner) x = true;
+//     }
+//     if (x == true)Console.WriteLine("Да, есть столбец с большей суммой значений");
+//     else Console.WriteLine("Нет столбца с большей суммой значений");
+// }
+// int SumCorner(int [,] filledArray){
+//     sumCorner = filledArray[0,0] + filledArray[rows-1, 0] + filledArray[0, columns-1] + filledArray[rows-1, columns-1];
+//     Console.WriteLine($"Сумма 'угловых' элементов массива: {sumCorner}");
+//     return sumCorner;
+// }
 
-int [,] FillArray(int rows, int columns, int min, int max){
-    int[,] array = new int[rows,columns];
-    for(int i = 0; i < rows; i++){
-        for(int j = 0; j< columns; j++){
-            array[i,j] = new Random().Next(min, max);
-        }
-    }
-    return array;
-}
+// int [,] FillArray(int rows, int columns, int min, int max){
+//     int[,] array = new int[rows,columns];
+//     for(int i = 0; i < rows; i++){
+//         for(int j = 0; j< columns; j++){
+//             array[i,j] = new Random().Next(min, max);
+//         }
+//     }
+//     return array;
+// }
 
-void PrintArray(int [,] filledArray){
-    for(int i = 0; i<filledArray.GetLength(0);i++){
-        for(int j = 0; j < filledArray.GetLength(1);j++){
-            Console.Write($"{filledArray[i,j]}  ");
-        }
-        Console.WriteLine();
-    }
-}
+// void PrintArray(int [,] filledArray){
+//     for(int i = 0; i<filledArray.GetLength(0);i++){
+//         for(int j = 0; j < filledArray.GetLength(1);j++){
+//             Console.Write($"{filledArray[i,j]}  ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+
