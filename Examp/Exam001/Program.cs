@@ -1267,3 +1267,310 @@ void PrintArray(int [,] filledArray){
 
 
 
+//Задача 53: Задайте двумерный массив. Напишите программу, 
+//которая поменяет местами первую и последнюю строку массива.
+// Console.Clear();
+
+// Console.Write("Количество строк в массиве: ");
+// int rows = int.Parse(Console.ReadLine());
+
+// Console.Write("Количество столбцов в массиве: ");
+// int columns = int.Parse(Console.ReadLine());
+
+// int [,] array = FillArray(rows, columns, 1 , 10);
+
+// PrintArray(array);
+// Console.WriteLine("Новый массив:");
+// PrintArray(TransformationArray(array));
+
+
+// int [,] TransformationArray(int [,] filledArray){
+//     int[,] transformationArray = new int[rows,columns];
+//     for(int i = 0; i < 1; i++){
+//         for(int j = 0; j< columns; j++){
+//             transformationArray[i,j] = filledArray[rows-1,j];
+//         }
+//     }
+//     for(int i = 1; i < rows-1; i++){
+//         for(int j = 0; j< columns; j++){
+//             transformationArray[i,j] = filledArray[i,j];
+//         }
+//     }
+//     for(int i = rows -1; i < rows; i++){
+//         for(int j = 0; j< columns; j++){
+//             transformationArray[i,j] = filledArray[0,j];
+//         }
+//     }
+//     return transformationArray;
+// }
+
+// int [,] FillArray(int rows, int columns, int min, int max){
+//     int[,] array = new int[rows,columns];
+//     for(int i = 0; i < rows; i++){
+//         for(int j = 0; j< columns; j++){
+//             array[i,j] = new Random().Next(min, max);
+//         }
+//     }
+//     return array;
+// }
+
+// void PrintArray(int [,] filledArray){
+//     for(int i = 0; i<filledArray.GetLength(0);i++){
+//         for(int j = 0; j < filledArray.GetLength(1);j++){
+//             Console.Write($"{filledArray[i,j]}  ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+
+
+
+//Задача 55: Задайте двумерный массив. Напишите программу, 
+//которая заменяет строки на столбцы. В случае, если это невозможно, 
+//программа должна вывести сообщение для пользователя.
+
+// Console.Clear();
+
+// Console.Write("Количество строк в массиве: ");
+// int rows = int.Parse(Console.ReadLine());
+
+// Console.Write("Количество столбцов в массиве: ");
+// int columns = int.Parse(Console.ReadLine());
+
+// int [,] array = FillArray(rows, columns, 1 , 10);
+
+// PrintArray(array);
+// Console.WriteLine("Новый массив:");
+// PrintArray(TransformationArray(array));
+
+
+// int [,] TransformationArray(int [,] filledArray){
+//     int[,] transformationArray = new int[rows,columns];
+//     if (rows == columns){
+//             for(int i = 0; i < rows; i++){
+//                 for(int j = 0; j< columns; j++){
+//                     transformationArray[i,j] = filledArray[j,i];
+//                 }
+//             }
+//     }
+//     else {
+//     Console.WriteLine("Это невозможно");
+//     return new int[0, 0];
+//     }
+//     return transformationArray;
+// }
+
+// int [,] FillArray(int rows, int columns, int min, int max){
+//     int[,] array = new int[rows,columns];
+//     for(int i = 0; i < rows; i++){
+//         for(int j = 0; j< columns; j++){
+//             array[i,j] = new Random().Next(min, max);
+//         }
+//     }
+//     return array;
+// }
+
+// void PrintArray(int [,] filledArray){
+//     for(int i = 0; i<filledArray.GetLength(0);i++){
+//         for(int j = 0; j < filledArray.GetLength(1);j++){
+//             Console.Write($"{filledArray[i,j]}  ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+//Задача 57: Составить частотный словарь элементов двумерного массива. 
+//Частотный словарь содержит информацию о том, сколько раз встречается элемент входных данных.
+// число 0 встречается - 5 раз
+// число 1 встречается - 2 раз
+// Console.Clear();
+
+// Console.Write("Количество строк в массиве: ");
+// int rows = int.Parse(Console.ReadLine());
+
+// Console.Write("Количество столбцов в массиве: ");
+// int columns = int.Parse(Console.ReadLine());
+
+// int [,] array = FillArray(rows, columns, 0 , 10);
+
+// PrintArray(array);
+// Console.WriteLine(String.Join (" ", FrequencyDictionary(array)));
+
+// int [] SortArray = FrequencyDictionary(array);
+// Array.Sort(SortArray);
+// PrintData(SortArray);
+
+// void PrintData(int[] inArray){
+//     int el=inArray[0];
+//     int count = 1;
+//     for (int i = 1; i < inArray.Length; i++){
+//         if(inArray[i]!=el){
+//             Console.WriteLine($"{el} встречается {count}");
+//             el=inArray[i];
+//             count=1;
+//         }
+//         else
+//             count++;
+//     }
+//     Console.WriteLine($"{el} встречается {count}");
+// }
+
+// int [] FrequencyDictionary(int [,] filledArray){
+//     int [] frequencyDictionary = new int[filledArray.GetLength(0)*filledArray.GetLength(1)];
+//     int count = 0;
+//     for(int i = 0; i<filledArray.GetLength(0);i++){
+//         for(int j = 0; j < filledArray.GetLength(1);j++){
+//             frequencyDictionary[count] = filledArray[i,j];
+//             count++;
+//         }
+//     } 
+//     return frequencyDictionary;
+// }
+
+// int [,] FillArray(int rows, int columns, int min, int max){
+//     int[,] array = new int[rows,columns];
+//     for(int i = 0; i < rows; i++){
+//         for(int j = 0; j< columns; j++){
+//             array[i,j] = new Random().Next(min, max);
+//         }
+//     }
+//     return array;
+// }
+
+// void PrintArray(int [,] filledArray){
+//     for(int i = 0; i<filledArray.GetLength(0);i++){
+//         for(int j = 0; j < filledArray.GetLength(1);j++){
+//             Console.Write($"{filledArray[i,j]}  ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+
+
+
+//Задача 59: Задайте двумерный массив из целых чисел. Напишите программу, 
+//которая удалит строку и столбец, на пересечении которых расположен наименьший элемент массива.
+using static System.Console;
+//2
+
+Clear();
+
+Write("Введите количество строк массива: ");
+int rows = int.Parse(ReadLine());
+Write("Введите количество столбцов массива: ");
+int columns = int.Parse(ReadLine());
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+WriteLine();
+WriteLine($"Минимальный элемент находится -> {String.Join(" ",GetIndexMinEl(array))}" );
+WriteLine();
+PrintArray(GetResultArray(array, GetIndexMinEl(array)));
+
+int[,] GetArray(int m, int n, int min, int max)
+{
+    int[,] result = new int[m, n];
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            result[i, j] = new Random().Next(min, max + 1);
+        }
+
+    }
+    return result;
+}
+
+int[] GetIndexMinEl(int[,] inArray)
+{
+    int[] result = new int[]{0,0};
+    int min=inArray[0,0];
+    for (int i = 0; i < inArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < inArray.GetLength(1); j++)
+        {
+            if(min>inArray[i,j])
+            {
+                min=inArray[i,j];
+                result[0]=i;
+                result[1]=j;
+            }
+        }
+    }
+    return result;
+}
+
+int[,] GetResultArray(int[,] inArray, int[] indexes)
+{
+    int[,] result = new int[inArray.GetLength(0) - 1, inArray.GetLength(1) - 1];
+    int row = 0;
+    int column = 0;
+    for (int i = 0; i < inArray.GetLength(0); i++)
+    {
+        if (i == indexes[0]) continue;
+        for (int j = 0; j < inArray.GetLength(1); j++)
+        {
+            if (j == indexes[1]) continue;
+            result[row, column] = inArray[i, j];
+            column++;
+        }
+        column = 0;
+        row++;
+    }
+    return result;
+}
+
+
+void PrintArray(int[,] inArray)
+{
+    for (int i = 0; i < inArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < inArray.GetLength(1); j++)
+        {
+            Write($"{inArray[i, j]} ");
+        }
+        WriteLine();
+    }
+}
+
+
+//Задача 61: Вывести первые N строк треугольника Паскаля. Сделать вывод в виде равнобедренного треугольника
+using static System.Console;
+//3
+
+Clear();
+
+Write("Введите нужное количество строк треугольника Паскаля: ");
+int rows = int.Parse(ReadLine());
+PrintTriangle(rows);
+
+
+void PrintTriangle(int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int c = 0; c <= (n - i); c++) // создаём после каждой строки n-i отступов от левой стороны консоли, чем ниже строка, тем меньше отступ
+        {
+            Write("  ");
+        }
+        for (int c = 0; c <= i; c++)
+        {
+            Write("   "); // создаём пробелы между элементами треугольника
+            Write(factorial(i) / (factorial(c) * factorial(i - c))); //формула вычисления элементов треугольника
+        }
+        WriteLine(); // после каждой строки с числами отступаем две пустые строчки
+    }
+}
+float factorial(int n)
+{
+    float x = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        x *= i;
+    }
+    return x;
+}
